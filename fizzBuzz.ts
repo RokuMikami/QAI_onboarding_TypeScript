@@ -37,4 +37,4 @@ function fizzBuzz(targetNum: number) {
     }
 }
 
-testFizzBuzz(30);
+fizzBuzz(30);
