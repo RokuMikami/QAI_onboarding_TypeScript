@@ -12,35 +12,28 @@ FizzBuzzの要件は以下のように定められます
 これを実装してみてください。
 */
 
-function testFizzBuzz(targetNum: number) {
+function fizzBuzz(targetNum: number) {
     
-    //出力用の数値を宣言
-    let num = 1;
     //出力用のテキストを宣言
     let result = "";
 
     //仮引数のtargetNumに到達するまでループ
-    for (let i = 0; i < targetNum; i++) {
+    for (let i = 1; i <= targetNum; i++) {
         
-        if ((num % 3 === 0) && (num % 5 === 0)) { //3の倍数かつ5の倍数の場合
+        if ((i % 3 === 0) && (i % 5 === 0)) { //3の倍数かつ5の倍数の場合
             result = "FizzBuzz";
-            //console.log(`Current num is ${num}`);
         }
-        else if (num % 3 === 0) { //3の倍数の場合
+        else if (i % 3 === 0) { //3の倍数の場合
             result = "Fizz";
-            //console.log(`Current num is ${num}`);
         }
-        else if (num % 5 === 0) { //5の倍数の場合
+        else if (i % 5 === 0) { //5の倍数の場合
             result = "Buzz";
-            //console.log(`Current num is ${num}`);
         }
         else { //3の倍数でも5の倍数でもない場合
-            result = num.toString();
+            result = i.toString();
         }
         //テキストを出力
         console.log(result);
-        //出力用の数値を+1
-        num++;
     }
 }
 
