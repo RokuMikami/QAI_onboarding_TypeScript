@@ -3,9 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.generateMessage = void 0;
 var input = 30;
 var generateMessage = function (n) {
-    if (typeof n !== "number") {
-        return "Invalid Number";
-    }
+    //number型以外の引数を受け取ることは想定していません
     if (n < 1 || n > input) {
         return "Invalid Number";
     }
