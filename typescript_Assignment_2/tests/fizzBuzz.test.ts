@@ -4,7 +4,7 @@
 ・number型以外の引数を受け取ることは想定していません
 */
 
-import { generateMessage } from "./fizzBuzz";
+import { generateMessage } from "../src/fizzBuzz";
 
 describe("正常系", () => {
   describe.each([[3], [18], [27]])(
@@ -37,16 +37,15 @@ describe("正常系", () => {
     }
   );
 
-  describe.each([
-    [1, "1"],
-    [14, "14"],
-    [29, "29"],
-  ])("3の倍数でも5の倍数でもなかったら渡した値そのままで返すこと", (value) => {
-    test(`return original value when ${value}`, () => {
-      const result = generateMessage(value);
-      expect(result).toBe(value.toString());
-    });
-  });
+  describe.each([[1], [14], [29]])(
+    "3の倍数でも5の倍数でもなかったら渡した値そのままで返すこと",
+    (value) => {
+      test(`return original value when ${value}`, () => {
+        const result = generateMessage(value);
+        expect(result).toBe(value.toString());
+      });
+    }
+  );
 });
 
 describe("異常系", () => {
@@ -60,7 +59,7 @@ describe("異常系", () => {
     }
   );
 
-  describe.each([[0], [-12], [-30]])(
+  describe.each([[31], [60], [100]])(
     "30より大きい数字を渡した場合、エラーを返すこと",
     (value) => {
       test(`return Error when ${value}`, () => {
